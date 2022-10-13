@@ -69,6 +69,11 @@
         <div id="help" class="col-sm row item bg-danger">Help report</div>
     </div><br>
 
+    <div class="container text-center">
+        <button class="btn btn-success" type="submit" onclick="resetGame()">Reset</button>
+    </div>
+<br>
+
     <div class="container">
     <div class="row">
         <div class="col-sm-2"><img src="treasure_chest.jpg" id="check0" onclick="check(0)" alt="treasure_chest" class="img-fluid" height="100" width="100"></div>
@@ -165,7 +170,30 @@
           document.getElementById("help").innerHTML = "Sorry, no help available"
       }
   }
+  function resetGame() {
+      treasureLocation = Math.floor(Math.random() * 24)
+      while(treasureLocation == 12) {
+          treasureLocation = Math.floor(Math.random() * 24)
+      }
+      chestCount = 0
+      score = 0
+      document.getElementById("chests").innerHTML = "Number of chests checked is zero"
+      document.getElementById("score").innerHTML = "Score is unknown"
+      document.getElementById("help").innerHTML = "Help report"
+      for(let i = 0; i < 24; i++) {
+          if(i != 12) {
+              document.getElementById(ids[i]).src = "treasure_chest.jpg"
+          }
+      }
+  }
 </script>
+<div class="container">
+  <ul class="pager">
+      <li class="next">
+          <a href="reaction.html">reaction timer</a>
+      </li>
+  </ul>
+</div>
 
 </body>
 </html>

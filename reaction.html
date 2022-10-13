@@ -76,6 +76,8 @@ function recordReact()
 }
 function startTime()
 {
+    let countdown = Math.floor(Math.random() * 9) + 2
+    console.log()
   for(k=0;k<4;k++)
   {
     display(k)
@@ -101,6 +103,14 @@ function display(i)
   },((3-i)*1000))
 }
 </script>
-    
+<div class="container">
+    <ul class="pager">
+        <li class="previous">
+            <a href="treasure.html">Treasure Page</a>
+        </li>
+        <li class="next">
+            <a href="cycler.html">Cycler Page</a>
+        </li> 
+    </ul>
 </body>
 </html>
